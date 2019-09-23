@@ -1,0 +1,61 @@
+<main class="main">
+        <div class="wrap">
+          <div class="demand">
+            <div class="layout-parent">
+              <div class="layout layout-left">
+                <app-user-navigation></app-user-navigation>
+              </div>
+              <div class="layout layout-middle is-full">
+                <div class="layout-middle__top"><i class="layout-middle__top__icon icon-demand"></i>
+                  <h2 class="layout-middle__top__title">Registrar denuncia</h2><span class="layout-middle__top__text">! Recuerda que tu denuncia se registrará de forma anónima</span>
+                </div>
+                <form class="form">
+                  <div class="form__row">
+                    <label for="title">Título*</label>
+                    <div class="input">
+                      <input type="text" id="title" name="titulo" [(ngModel)] = "titulo" required>
+                    </div>
+                  </div>
+                  <div class="form__row">
+                    <label for="description">Descripción*</label>
+                    <textarea class="textarea" name="" cols="30" rows="10" id="description" name="descripcion" [(ngModel)] = "descripcion" required></textarea>
+                  </div>
+                  <div class="form__row">
+                    <div class="form__row__left">
+                      <label for="docfiles">Adjuntar archivos (pdf, word)</label>
+                      <div class="input">
+                        <input type="file" id="docfiles" name="file1" (change) = "onFile1Select($event)">
+                      </div>
+                    </div>
+                    <div class="form__row__right">
+                      <label for="imagefiles">Adjuntar archivos (pdf, word)</label>
+                      <div class="input">
+                        <input type="file" id="imagefiles"  name="file2" (change) = "onFile2Select($event)">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form__row">
+                    <div class="form__row__left">
+                      <label for="party">Partido político
+                        <select class="select" id="party" (change)="cargarCandidatos($event.target.value)"  >
+                          <option value="0">::SELECCIONE::</option>
+                          <option *ngFor="let partido of partidosPoliticos" [value]="partido.id" >{{partido.nombre}}</option>
+                        </select>
+                      </label>
+                    </div>
+                    <div class="form__row__right">
+                      <label for="candidate">Candidato
+                        <select class="select" id="candidate"  [(ngModel)] = "idCandidato"  name="candidato">
+                          <option value="0">::SELECCIONE::</option>
+                          <option *ngFor="let candidato of candidatos" [ngValue]="candidato.id" >{{candidato.nombre}} {{candidato.apellido}}</option>
+                        </select>
+                      </label>
+                    </div>
+                  </div>
+                  <button class="btn" (click) = "registrarDenuncia()">Registrar denuncia</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>

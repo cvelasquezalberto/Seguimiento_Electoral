@@ -1,0 +1,60 @@
+.main {
+    background-color: #E9EBEE;
+}
+
+@media only screen and (max-width: 767px) {
+    .demand {
+        padding: 0 3.8461538462%;
+    }
+}
+
+.demand .form {
+    padding: 16px 3.2258064516%;
+}
+
+.demand .form__row {
+    margin-bottom: 30px;
+}
+
+.demand .form__row::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.demand .form__row__left {
+    float: left;
+    width: 45%;
+    margin-right: 10%;
+}
+
+@media only screen and (max-width: 767px) {
+    .demand .form__row__left {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+.demand .form__row__right {
+    float: left;
+    width: 45%;
+}
+
+@media only screen and (max-width: 767px) {
+    .demand .form__row__right {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+}
+
+.demand .form .btn {
+    margin: 0 auto;
+}
+
+.demand .form label {
+    font-family: "Gilroy", Verdana;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}

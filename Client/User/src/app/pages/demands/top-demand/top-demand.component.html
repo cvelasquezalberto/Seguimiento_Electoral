@@ -1,0 +1,54 @@
+<main class="main">
+        <div class="wrap">
+          <div class="top">
+            <div class="layout-parent">
+              <div class="layout layout-left">
+                 <app-user-navigation></app-user-navigation>
+              </div>
+              <div class="layout layout-middle">
+                <div class="layout-middle__top"><i class="layout-middle__top__icon icon-top"></i>
+                  <h2 class="layout-middle__top__title">Top de Denuncias</h2>
+                  <select class="select layout-middle__top__filter" (change)="cargarDenunciasTop()" name="cboPartido"  [(ngModel)] = "idPartidoPoliticoSelect" >
+                    <option value="0">::TODOS::</option>
+                    <option *ngFor="let partido of partidosPoliticos" [value]="partido.id">{{partido.nombre}}</option>
+                  </select>
+                </div>
+                <div class="demand__separator" *ngFor="let denuncia of denunciaCandidato">
+                    <div class="demand__content">
+                      <h3 class="demand__content__title">{{denuncia.titulo}}</h3><span class="demand__content__date">{{denuncia.fecha}}</span>
+                      <p class="demand__content__text">{{denuncia.descripcion}}</p>
+                    </div>
+                    <div class="demand__organization">
+                      <div class="demand__organization__image"><img [src]= "denuncia.fotoPartidoPolitico | safe" alt=""></div>
+                      <div class="demand__organization__info"><span class="demand__organization__name">APRA</span><span class="demand__organization__charge"></span><span class="demand__organization__place">Lima, Lima</span></div>
+                    </div>
+                    <div class="demand__person">
+                      <div class="demand__person__image"><img  [src]= "denuncia.fotoCandidato | safe"></div>
+                      <div class="demand__person__info"><span class="demand__person__charge">{{denuncia.cargoPolitico}}</span><span class="demand__person__name">{{denuncia.nombreCandidato}}</span></div>
+                    </div>
+                    <div class="demand__bottom">
+                      <div class="demand__followers" (click) = "registrarSeguimiento(denuncia.id)"><i></i><span>{{denuncia.totalSeguimiento}} Siguiendo</span></div>
+                      <div class="demand__details"><a  [routerLink]="['/seguimiento-electoral/detalle',denuncia.id]">Ver detalle</a></div>
+                    </div>
+                </div>
+              </div>
+              <div class="layout layout-right">
+                <div class="follows">
+                  <div class="follows__top">
+                    <h3>Seguimientos</h3>
+                  </div>
+                  <ul class="follows__list">
+                    <li class="follows__list__item" *ngFor="let denuncia of denuncias">
+                      <a [routerLink]="['/seguimiento-electoral/detalle',denuncia.id]">
+                        <span class="follows__list__item__title">{{denuncia.titulo}}</span>
+                        <span class="follows__list__item__text">{{denuncia.descripcion | cutText : 90}}</span> 
+                        <span class="follows__list__item__numbers"><i></i><span>{{denuncia.totalSeguimiento}}</span></span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
