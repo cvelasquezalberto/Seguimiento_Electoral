@@ -20,7 +20,7 @@ npm install
 
 ### Modo de ejecución ###
 
-Ejecutar los siguiente
+Ejecutar lo siguiente
 
 ```bash
 ng serve        # Modo desarrollo
