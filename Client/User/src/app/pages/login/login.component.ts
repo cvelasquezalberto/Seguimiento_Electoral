@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {AuthService} from '../../services/auth/auth-service.service';
+import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -24,11 +26,11 @@ export class LoginComponent implements OnInit {
       data => this.router.navigateByUrl('seguimiento-electoral/top'),
       httpError => {
         if (httpError.status === 400 ) {
-          alert('Usuario y/o contraseña incorrecta');
+          Swal.fire({title: 'Información', text: 'Usuario y/o contraseña incorrecta', type: 'warning' });
         } else if ( httpError.status === 401) {
-          return alert('El usuario no se encuentra registrado');
+          Swal.fire({title: 'Información', text: 'El usuario no se encuentra registrado', type: 'warning' });
         } else {
-          return alert('Error al al realizar la operación');
+          Swal.fire({title: 'Información', text: 'Error al al realizar la operación', type: 'error' });
         }
       }
     );

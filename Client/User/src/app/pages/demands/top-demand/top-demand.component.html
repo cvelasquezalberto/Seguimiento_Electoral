@@ -9,7 +9,7 @@
                 <div class="layout-middle__top"><i class="layout-middle__top__icon icon-top"></i>
                   <h2 class="layout-middle__top__title">Top de Denuncias</h2>
                   <select class="select layout-middle__top__filter" (change)="cargarDenunciasTop()" name="cboPartido"  [(ngModel)] = "idPartidoPoliticoSelect" >
-                    <option value="0">::TODOS::</option>
+                    <option value="0">Todos los partidos políticos</option>
                     <option *ngFor="let partido of partidosPoliticos" [value]="partido.id">{{partido.nombre}}</option>
                   </select>
                 </div>

@@ -40,7 +40,6 @@ export class TopDemandComponent implements OnInit {
   }
 
   listarDenunciasSeguidas() {
-    const idUsuario = this.authService.ObtenerUsuario().id;
     this.demandService.listarDenunciasSeguidas(this.authService.ObtenerUsuario().id).subscribe((denuncias: Denuncia[]) => {
       this.denuncias = denuncias;
      });
@@ -51,11 +50,11 @@ export class TopDemandComponent implements OnInit {
     seguimiento.idDenuncia = idDenuncia;
     seguimiento.idUsuario =  this.authService.ObtenerUsuario().id;
     this.demandService.registrarSeguimiento(seguimiento).subscribe((seg: SeguimientoDenuncia) => {
-        const denuncia: any = this.denuncias.find(x => x.id === seg.idDenuncia);
-        if (denuncia !== undefined) {
-          denuncia.totalSeguimiento = seg.total;
-        }
-
+        // const denuncia: any = this.denuncias.find(x => x.id === seg.idDenuncia);
+        // if (denuncia !== undefined) {
+        //   denuncia.totalSeguimiento = seg.total;
+        // }
+        this.listarDenunciasSeguidas();
         const denunciaCand: any = this.denunciaCandidato.find(x => x.id === seg.idDenuncia);
         if (denunciaCand !== undefined) {
           denunciaCand.totalSeguimiento = seg.total;

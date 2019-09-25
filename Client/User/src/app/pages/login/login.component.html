@@ -10,7 +10,7 @@
       <div class="home">
         <div class="content">
           <div class="home__left"><img src="assets/images/iconlogo.png" alt=""><img src="assets/images/logo.png" alt="">
-            <p>Acerca del aplicativo ... Esta denuncia constitucional deberá seguir un largo camino en el Congreso de la República. Pero no es la primera acusación que se presenta sobre el mismo caso.</p>
+            <p>Seguimiento electoral te permitirá visualizar los antecedentes de denuncias que tienen los candidatos de un partido en el momento de elecciones. Así como, registrar una denuncia sobre actos delictivos de los candidatos o integrantes de un partido público.</p>
           </div>
           <div class="home__right">
             <form class="home__form" #loginForm="ngForm">
@@ -23,7 +23,7 @@
                   <input class="input--password" type="password" placeholder="Ingresa tu contraseña"  [(ngModel)] = "password" name="password">
                 </div>
               </div>
-              <button class="btn" (click)="login()">Ingresar</button><a class="home__form__forgot">¿Olvidaste  tu contraseña?</a><span>Si aún no tienes una cuenta, <a class="home__form__register" href="register.html">Registrate aquí</a></span>
+              <button class="btn" (click)="login()">Ingresar</button><a class="home__form__forgot">¿Olvidaste  tu contraseña?</a><span>Si aún no tienes una cuenta, <a class="home__form__register" [routerLink]="['/cuenta/registrar']">Registrate aquí</a></span>
             </form>
           </div>
         </div>

@@ -1,0 +1,26 @@
+<main class="main">
+        <div class="wrap">
+          <div class="mydemands">
+            <div class="layout-parent">
+              <div class="layout layout-left">
+                <app-user-navigation></app-user-navigation>
+              </div>
+              <div class="layout layout-middle is-full">
+                <div class="layout-middle__top"><i class="layout-middle__top__icon icon-zoom"></i>
+                  <h2 class="layout-middle__top__title">Bandeja de denuncias</h2>
+                </div>
+                <ul class="list" >
+                  <li class="list__item" [ngClass]="{'list--approved': denuncia.estado_id == 1, 'list--inprocess': denuncia.estado_id == 2, 'list--unapproved': denuncia.estado_id == 3}"
+                    *ngFor="let denuncia of denuncias">
+                      <a [routerLink]="['/seguimiento-electoral/detalle',denuncia.id]">
+                        <div class="list__item__status"><span>{{denuncia.nombreEstado}}</span></div>
+                        <div class="list__item__desc"><span>{{denuncia.titulo}}</span></div>
+                        <div class="list__item__date"><span>{{denuncia.fecha}}</span></div>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>

@@ -5,6 +5,7 @@ import { PartidoPolitico } from 'src/app/model/partido-Politico.model';
 import { Candidato } from 'src/app/model/candidato';
 import { Denuncia } from 'src/app/model/denuncia.model';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-demand',
@@ -65,7 +66,7 @@ export class RegisterDemandComponent implements OnInit {
     formData.append('file2', this.file2);
 
     this.demandService.registrarDenuncia(formData).subscribe((denuncia: Denuncia) => {
-        alert('La denuncia fué registrada con éxito');
+        Swal.fire({title: 'Información', text: 'Su denuncia se registró con éxito', type: 'success' });
         this.router.navigateByUrl('seguimiento-electoral/misdemandas');
     });
   }

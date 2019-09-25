@@ -1,0 +1,52 @@
+<main class="main">
+        <div class="wrap">
+          <div class="single-demand">
+            <div class="layout-parent">
+              <div class="layout layout-left">
+                <app-user-navigation></app-user-navigation>
+              </div>
+              <div class="layout layout-middle is-full" >
+                <div class="layout-middle__top"><i class="layout-middle__top__icon icon-zoom"></i>
+                  <h2 class="layout-middle__top__title">Denuncia</h2>
+                </div>
+                <div class="single-demand__main" *ngIf="denuncia">
+                  <span class="single-demand__status" [ngClass]="{'single-demand__status--approved': denuncia.idEstado == 1, 'single-demand__status--inprocess': denuncia.idEstado == 2, 'single-demand__status--unapproved': denuncia.idEstado == 3}">{{denuncia.nombreEstado}}</span>
+                  <h3 class="single-demand__title">{{denuncia.titulo}}</h3>
+                  <div class="single-demand__organization">
+                    <div class="single-demand__organization__image"><img [src]= "denuncia.fotoPartidoPolitico | safe"></div>
+                    <div class="single-demand__organization__info"><span class="single-demand__organization__name">{{denuncia.partidoPolitico}}</span><span class="single-demand__organization__charge"></span><span class="single-demand__organization__place">Lima, Lima</span></div>
+                  </div>
+                  <div class="single-demand__person">
+                    <div class="single-demand__person__image"><img g [src]= "denuncia.fotoCandidato | safe"></div>
+                    <div class="single-demand__person__info"><span class="single-demand__person__charge">{{denuncia.cargoPolitico}}</span><span class="single-demand__person__name">{{denuncia.nombreCandidato}}</span></div>
+                  </div>
+                  <div class="single-demand__text">
+                    <p>{{denuncia.descripcion}}</p>
+                  </div>
+                  <div class="single-demand__attachments" *ngIf="denuncia && denuncia.evidencias.length != 0">
+                      <span>Adjuntos:</span>
+                      <a *ngFor = "let evidencia of denuncia.evidencias" (click) = "descargarEvidencia(evidencia.id, evidencia.nombreArchivo)" >{{evidencia.nombreArchivo}}</a>
+                  </div>
+                  <div class="single-demand__admin">
+                    <div class="single-demand__item">
+                      <div class="single-demand__item__left"><span>Estado:</span></div>
+                      <div class="single-demand__item__right">
+                        <select class="select" id="status" name="estado">
+                          <option *ngFor="let estado of listaEstado" [value]="estado.id">{{estado.nombre}}</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="single-demand__item">
+                      <div class="single-demand__item__left"><span>Respuesta:</span></div>
+                      <div class="single-demand__item__right">
+                        <textarea class="textarea" name="" cols="30" rows="5" id="description" required>{{respuesta}}</textarea>
+                      </div>
+                    </div>
+                    <button class="btn single-demand__btn">Guardar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>

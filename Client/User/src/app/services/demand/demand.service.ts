@@ -72,7 +72,7 @@ export class DemandService {
                               .pipe(tap(data => data), catchError(this.handleError));
     }
 
-    private handleError(errorResponse: HttpErrorResponse) {
+    public handleError(errorResponse: HttpErrorResponse) {
         if (errorResponse.error.message !== undefined) {
             alert(errorResponse.error.message);
 
@@ -86,5 +86,4 @@ export class DemandService {
         }
         return throwError('Something bad happened; please try again later.');
     }
-
 }

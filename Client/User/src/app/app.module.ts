@@ -15,6 +15,8 @@ import { UserNavigationComponent } from './_layout/user-navigation.component';
 import { UserGuardService } from './services/guards/user-guard.service';
 import { SafePipe } from './pipes/sife.pipe';
 import { CutTextPipe } from './pipes/cut-text.pipe';
+import { RegisterComponent } from './pages/account/register.component';
+import { DemandListComponent } from './pages/demands/demand-list/demand-list.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { CutTextPipe } from './pipes/cut-text.pipe';
     TopDemandComponent,
     UserNavigationComponent,
     SafePipe,
-    CutTextPipe
+    CutTextPipe,
+    RegisterComponent,
+    DemandListComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,15 @@ import { CutTextPipe } from './pipes/cut-text.pipe';
           { path: 'misdemandas', component: MydemandComponent, canActivate: [UserGuardService]},
           { path: 'registrar', component: RegisterDemandComponent, canActivate: [UserGuardService]},
           { path: 'detalle/:id', component: DetailDemandComponent, canActivate: [UserGuardService]},
-          { path: 'top', component: TopDemandComponent, canActivate: [UserGuardService]}
+          { path: 'top', component: TopDemandComponent, canActivate: [UserGuardService]},
+          { path: 'lista', component: DemandListComponent, canActivate: [UserGuardService]}
+        ]
+      },
+      {
+        path: 'cuenta',
+        component: UserLayoutComponent,
+        children: [
+          { path: 'registrar', component: RegisterComponent}
         ]
       },
       {

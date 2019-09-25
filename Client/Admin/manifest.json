@@ -1,0 +1,16 @@
+{
+    "name": "Seguimiento electoral",
+    "short_name": "Seguimiento electoral",
+    "description": "Seguimiento electoral",
+    "start_url": "./?utm_source=homescreen",
+    "display": "standalone",
+    "theme_color": "#BC0D0D",
+    "background_color": "#BC0D0D",
+    "icons": [
+        {
+            "src": "./images/icons/152.png",
+            "sizes": "36x36",
+            "type": "image/png"
+        }
+    ]
+}

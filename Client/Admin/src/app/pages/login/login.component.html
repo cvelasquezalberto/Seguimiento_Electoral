@@ -1,0 +1,33 @@
+<header class="header">
+    <div class="header__control">
+      <div class="icon"><img src="assets/images/iconlogo.png" alt=""></div>
+      <div class="logo"><img src="assets/images/logo.png" alt=""></div>
+      <div class="logout"><a href="#"></a></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="wrap">
+      <div class="home">
+        <div class="content">
+          <div class="home__left"><img src="assets/images/iconlogo.png" alt=""><img src="assets/images/logo.png" alt="">
+            <p>Seguimiento electoral te permitirá visualizar los antecedentes de denuncias que tienen los candidatos de un partido en el momento de elecciones. Así como, registrar una denuncia sobre actos delictivos de los candidatos o integrantes de un partido público.</p>
+          </div>
+          <div class="home__right">
+            <form class="home__form" #loginForm="ngForm">
+              <h3 class="home__form__title">Iniciar Sesión</h3>
+              <div class="inputs">
+                <div class="input input--user">
+                  <input type="text" placeholder="Ingresa tu usuario" [(ngModel)] = "usuario" name="usuario">
+                </div>
+                <div class="input input--password">
+                  <input class="input--password" type="password" placeholder="Ingresa tu contraseña"  [(ngModel)] = "password" name="password">
+                </div>
+              </div>
+              <button class="btn" (click)="login()">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>

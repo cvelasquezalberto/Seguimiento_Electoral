@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reniec.com/personas" 
+	xmlns:tns="http://www.reniec.com/personas" elementFormDefault="qualified">
+	<xs:element name="personaRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="dni" type="xs:string"/>
+                <xs:element name="fechaEmision" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="personaResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="persona" type="tns:persona"/>
+                <xs:element name="codigo" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+     <xs:complexType name="persona">
+             <xs:sequence>
+	            <xs:element name="dni" type="xs:string"/>
+	            <xs:element name="fechaEmision" type="xs:string"/>
+	            <xs:element name="nombres" type="xs:string"/>
+	            <xs:element name="apellidos" type="xs:string"/>
+	            <xs:element name="direccion" type="xs:string"/>
+        	</xs:sequence>
+        </xs:complexType>
+    
+</xs:schema>

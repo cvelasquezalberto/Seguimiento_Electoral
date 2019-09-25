@@ -1,8 +1,8 @@
 <div>
-        <div class="account"><img class="account__image" src="#" alt=""><span class="account__name">Juanita Perez</span><span class="account__email">juanita-perez@gmail.com</span></div>
+        <div class="account"><img class="account__image" [src]="usuario.foto" alt=""><span class="account__name">{{usuario.nombre}} {{usuario.apellido}}</span><span class="account__email">{{usuario.correo}}</span></div>
         <ul class="list">
           <li><a  routerLink="/seguimiento-electoral/top"><i class="list__top"></i><span>Ver top de denuncias</span></a></li>
-          <li><a  routerLink="/seguimiento-electoral/top"><i class="list__all"></i><span>Ver todas las denuncias</span></a></li>
+          <li><a  routerLink="/seguimiento-electoral/lista"><i class="list__all"></i><span>Ver todas las denuncias</span></a></li>
           <li><a  routerLink="/seguimiento-electoral/registrar"><i class="list__new"></i><span>Registra tu denuncia aquí</span></a></li>
           <li><a  routerLink="/seguimiento-electoral/misdemandas"><i class="list__mine"></i><span>Ver mis denuncias</span></a></li>
         </ul>

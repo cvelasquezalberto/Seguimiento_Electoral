@@ -1,0 +1,116 @@
+.home {
+    height: 80vh;
+    width: 100%;
+    padding-top: 10%;
+}
+
+.home__left {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 400px;
+    float: left;
+    width: calc(50% - 1px);
+    border-right: 1px black solid;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-right: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+    .home__left {
+        width: 100%;
+        border-right: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        display: none;
+    }
+}
+
+.home__left p {
+    font-family: "Gilroy", Verdana;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.home__right {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 400px;
+    float: left;
+    width: 50%;
+    padding-left: 5%;
+}
+
+@media only screen and (max-width: 767px) {
+    .home__right {
+        width: 100%;
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
+
+.home__form {
+    width: 100%;
+    text-align: center;
+}
+
+.home__form .input {
+    width: 100%;
+    margin-bottom: 16px;
+    margin-bottom: 50px;
+}
+
+.home__form .input:last-child {
+    margin-bottom: 30px;
+}
+
+.home__form .btn {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 16px;
+}
+
+.home__form__title {
+    margin: 0 0 34px;
+    font-family: "Gilroy", Verdana;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+}
+
+.home__form span {
+    display: inline-block;
+    font-family: "Gilroy", Verdana;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333333;
+    margin-top: 10px;
+}
+
+.home__form__forgot {
+    display: block;
+    font-family: "Gilroy", Verdana;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: #004A92;
+    cursor: pointer;
+    margin-bottom: 26px;
+}
+
+.home__form__register {
+    display: inline-block;
+    font-family: "Gilroy", Verdana;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    -webkit-text-decoration-line: underline;
+            text-decoration-line: underline;
+    color: #16A2FF;
+}
