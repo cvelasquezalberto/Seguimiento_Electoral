@@ -1,4 +1,4 @@
-# Seguiemiento_Electoral - Frontend - Backend
+# Seguimiento_Electoral - Frontend - Backend
 Proyecto UPC
 
 # Frontend
